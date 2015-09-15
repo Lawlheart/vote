@@ -12,8 +12,12 @@ angular.module('workspaceApp')
       if($scope.newThing === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+      $scope.awesomeThings.push({ name: $scope.newThing });
+      $http.post('/api/things', { name: $scope.newThing }).success(function(thatThingWeJustAdded) {
+        $scope.awesomeThings.pop(); // let's lose that id-lacking newThing 
+        $scope.awesomeThings.push(thatThingWeJustAdded); // and add the id-having newThing!
+        $scope.newThing = '';
+      });
     };
 
     $scope.deleteThing = function(thing) {
