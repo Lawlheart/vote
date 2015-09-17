@@ -2,12 +2,22 @@
 
 angular.module('workspaceApp')
   .controller('MainCtrl', function ($scope, $http) {
+
+    $http.get('/api/polls').success(function(polls) {
+      $scope.polls = polls;
+      console.log(polls)
+    })
+
+
+
+
+
+
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     });
-
     $scope.addThing = function() {
       if($scope.newThing === '') {
         return;
