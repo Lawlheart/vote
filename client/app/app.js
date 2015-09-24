@@ -5,6 +5,7 @@ angular.module('workspaceApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngToast',
   'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {

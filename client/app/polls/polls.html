@@ -9,14 +9,19 @@
 
 	<div ng-switch-when="1" class="text-center">
 		<ul id="choices" class="list-group">
-			<li ng-repeat="choice in poll.choices" ng-click="choose($index)" class="list-group-item">{{choice.choice}}</li>
+			<li ng-repeat="choice in poll.choices" ng-click="choose($index)" class="list-group-item" ng-hide="choice.choice === ''">{{choice.choice}}</li>
+			<input type="text" class="list-group-item" ng-model="writeIn" id="writeIn" ng-click="chooseWriteIn()" placeholder="or write one in!">
 		</ul>
+
 		<button class="btn btn-success" id="vote-button" ng-disabled="!loaded" ng-click="vote()">Vote</button>
+
 	</div>
 	<div ng-switch-when="2">
 		<div ng-repeat="choice in poll.choices" class="progress votes">
 			<div class="progress-bar vote-count" style="width:{{choice.votes*100/max}}%; background-color:{{colors[$index]}}">{{choice.choice}}: {{choice.votes}}</div>
 		</div>
 	</div>
-
+	<div class="reference-url text-center">
+		<button class="twitter-share-button btn btn-info" id="share-button" ng-click="share()">Share on Twitter</button>
+	</div>
 </main>

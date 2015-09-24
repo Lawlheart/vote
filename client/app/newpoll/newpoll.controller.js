@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('workspaceApp')
-  .controller('NewpollCtrl', function ($scope, $http, Auth) {
+  .controller('NewpollCtrl', function ($scope, $http, Auth, ngToast) {
     $scope.name = "";
     $scope.description = "";
     $scope.message = 'Hello';
@@ -46,12 +46,16 @@ angular.module('workspaceApp')
       var poll = {
         name: $scope.name,
         info: $scope.description,
-        choices: $scope.choices,
+        choices: $scope.choices.filter(function(obj) { return obj.choice !== "" }),
         active: true,
         user: user
       }
       $http.post('/api/polls', poll).success(function(addedPoll) {
         console.log(addedPoll);
+        ngToast.create({
+          className: 'success',
+          content: 'Poll Sucessfuly Created'
+        });
         window.location.href="/";
       });
     }

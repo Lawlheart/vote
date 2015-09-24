@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
         	<label for="pollChoices" class="col-lg-2 control-label">Choices</label>
-        	<div id="choices" class="col-lg-10">
+        	<div id="choices-div" class="col-lg-10">
         		<input type="text" class="form-control" ng-repeat="choice in choices" ng-model="choice.choice">
         		<input type="button" class="btn btn-primary" ng-click="addChoice()" value="Add Choice">
             <input type="button" class="btn btn-success" ng-click="newPoll()" value="Submit" ng-disabled="!name || !description">

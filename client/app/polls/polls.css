@@ -6,13 +6,20 @@
 	margin-top:20px;
 	width:400px;
 }
+#share-button {
+ 	width:400px;
+}
 #choices .active {
 	background-color: #141;
 }
 #choices li {
 	cursor:pointer;
 }
-
+#writeIn {
+	width:100%;
+	color:#fff;
+	text-align:center;
+}
 .progress.votes {
 	height: 40px;
 	font-size: 26px;
