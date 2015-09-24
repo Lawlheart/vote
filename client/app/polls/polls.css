@@ -1,0 +1,24 @@
+#choices {
+	width:400px;
+	margin:auto;
+}
+#vote-button {
+	margin-top:20px;
+	width:400px;
+}
+#choices .active {
+	background-color: #141;
+}
+#choices li {
+	cursor:pointer;
+}
+
+.progress.votes {
+	height: 40px;
+	font-size: 26px;
+}
+.progress-bar.vote-count {
+	text-align:left;
+	padding:0 10px;
+	text-shadow:0 1px #222;
+}

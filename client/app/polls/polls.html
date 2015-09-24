@@ -1,0 +1,22 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<main class="container well" ng-switch="step">
+	<div class="title text-center">
+		<h1>{{poll.name}}</h1>
+		<h3>{{poll.info}}</h3>
+	</div>
+
+	<div ng-switch-when="1" class="text-center">
+		<ul id="choices" class="list-group">
+			<li ng-repeat="choice in poll.choices" ng-click="choose($index)" class="list-group-item">{{choice.choice}}</li>
+		</ul>
+		<button class="btn btn-success" id="vote-button" ng-disabled="!loaded" ng-click="vote()">Vote</button>
+	</div>
+	<div ng-switch-when="2">
+		<div ng-repeat="choice in poll.choices" class="progress votes">
+			<div class="progress-bar vote-count" style="width:{{choice.votes*100/max}}%; background-color:{{colors[$index]}}">{{choice.choice}}: {{choice.votes}}</div>
+		</div>
+	</div>
+
+</main>

@@ -2,8 +2,8 @@
 
 <header class="hero-unit" id="banner">
   <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <h1>Vote</h1>
+    <p>Powered by</p>
     <img src="assets/images/yeoman.png" alt="I'm Yeoman">
   </div>
 </header>
@@ -22,7 +22,7 @@
       </ul> -->
 
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="poll in polls">
-        <li><a href="#" tooltip="{{poll.info}}">{{poll.name}}</a></li>
+        <li><a href="{{'\/polls\/' + poll._id}}" tooltip="{{poll.info}}">{{poll.name}}</a></li>
       </ul>
     </div>
   </div>

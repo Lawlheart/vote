@@ -1,0 +1,42 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="col-lg-6">
+	<div class="well bs-component">
+		<form action="" novalidate class="form-horizontal">
+			<fieldset>
+				<legend>Create new Poll</legend>
+				<div class="form-group">
+          <label for="pollName" class="col-lg-2 control-label">Poll Name</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="pollName" placeholder="Poll Name" ng-model="name">
+          </div>
+        </div>
+        <div class="form-group">
+        	<label for="pollDesc" class="col-lg-2 control-label">Description</label>
+        	<div class="col-lg-10">
+        		<input type="text" class="form-control" id="pollDesc" placeholder="Description" ng-model="description">
+        	</div>
+        </div>
+        <div class="form-group">
+        	<label for="pollChoices" class="col-lg-2 control-label">Choices</label>
+        	<div id="choices" class="col-lg-10">
+        		<input type="text" class="form-control" ng-repeat="choice in choices" ng-model="choice.choice">
+        		<input type="button" class="btn btn-primary" ng-click="addChoice()" value="Add Choice">
+            <input type="button" class="btn btn-success" ng-click="newPoll()" value="Submit" ng-disabled="!name || !description">
+        	</div>
+        </div>
+
+			</fieldset>
+		</form>
+	</div>
+</div>
+<div class="col-lg-5 debug">
+  <pre ng-bind="name | json"></pre>
+  <pre ng-bind="description | json"></pre>
+  <pre ng-bind="pollTest | json"></pre>
+</div>
+<!-- 	// name: String,
+		  // info: String,
+		  // choices: Array,
+		  // votes: Array,
+		  // active: Boolean,
+		  // user: String -->
