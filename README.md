@@ -7,7 +7,6 @@ Voting app built using MEAN stack and oAuth that allows users to login, create p
 
  - How to use Yeoman to scaffold apps.
  - How to add and update properties to MongoDB.
- - How to make a MongoDB schema using Mongoose such that data resets daily.
  - How to create and upload a MEAN stack app for use on sites such as Heroku.
  - How to implement oAuth to give a personalized experience for users.
 
